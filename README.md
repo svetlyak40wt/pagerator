@@ -9,6 +9,7 @@ Quick example
 
 This is example, how easy to fetch 100 latest commits from the Django's repository using pythonic way.
 
+    :::python
     #!/usr/bin/env python
     import urllib
     import simplejson
