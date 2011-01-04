@@ -34,4 +34,4 @@ See `example.py` for more details. It contains a short example, how to fetch
 Author
 ------
 
-Alexander Artemenko, svetlyak.40wt@gmail.com.
+Alexander Artemenko, <svetlyak.40wt@gmail.com>
