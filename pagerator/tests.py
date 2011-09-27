@@ -36,6 +36,10 @@ class Tests(unittest.TestCase):
         self.assertEqual(range(15, 17), list(self.obj[15:17]))
         self.assertEqual([1], self.hits)
 
+    def test_infinite_loop(self):
+        self.assertEqual([], list(self.obj[0:0]))
+        self.assertEqual([], self.hits)
+
 
 if __name__ == '__main__':
     unittest.main()
