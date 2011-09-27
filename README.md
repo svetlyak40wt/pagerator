@@ -56,6 +56,12 @@ Features
 
 * You even may use subslicing and it will work correctly: `query[1000:][20:30]`.
 
+Changes
+-------
+
+### 0.1.1
+  * Fixed issue with [0:0] slice.
+
 Author
 ------
 

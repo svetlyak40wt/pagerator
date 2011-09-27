@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name = 'pagerator',
-    version = '0.1.0',
+    version = '0.1.1',
     description = 'A helper to build iterables when you need to fetch results already divided into the pages.',
     author = 'Alexander Artemenko',
     author_email = 'svetlyak.40wt@gmail.com',
