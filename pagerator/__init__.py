@@ -3,24 +3,27 @@ import math
 def _iterate_over_pages(getter, page_size, start_from, upper_bound):
     page = int(math.floor(start_from / page_size))
 
-    if upper_bound is not None:
+    if upper_bound is None:
+        num_items = None
+    else:
         num_items = upper_bound - start_from
 
-    start_from -= page * page_size
+    if num_items != 0:
+        start_from -= page * page_size
 
-    results = getter(page)
-    while results:
-        for item in results:
-            if start_from > 0:
-                start_from -= 1
-            else:
-                yield item
-                if upper_bound is not None:
-                    num_items -= 1
-                    if num_items == 0:
-                        return
-        page += 1
         results = getter(page)
+        while results:
+            for item in results:
+                if start_from > 0:
+                    start_from -= 1
+                else:
+                    yield item
+                    if upper_bound is not None:
+                        num_items -= 1
+                        if num_items == 0:
+                            return
+            page += 1
+            results = getter(page)
 
 
 class IterableQuery(object):
